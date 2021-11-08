@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-
+title = 'Dynamic title';
+number = '42'
 }
