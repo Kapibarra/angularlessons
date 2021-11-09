@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-Toggle = false;
+Toggle:any = false;
 
 }
