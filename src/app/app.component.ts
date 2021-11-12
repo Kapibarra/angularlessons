@@ -18,4 +18,9 @@ posts: Post[] = [
   {title: 'Angular JS 2', text: 'Post text 2', id: 2},
 ];
 
+updatePosts(post: Post) {
+  this.posts.unshift(post);
+  console.log('post', post);
+}
+
 }
