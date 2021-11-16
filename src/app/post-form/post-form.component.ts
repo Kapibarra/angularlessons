@@ -1,5 +1,5 @@
 import { Post } from './../app.component';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-post-form',
@@ -9,6 +9,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class PostFormComponent implements OnInit {
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
+
+@ViewChild('titleInput', {static: false}) inputRef: ElementRef
 
   title = ''
   text = ''
@@ -31,5 +33,10 @@ text: this.text
       
       this.title = this.text = ''
     }
+  }
+
+  focusTitle() {
+this.inputRef.nativeElement.classList.add('qwerty')
+
   }
 }
