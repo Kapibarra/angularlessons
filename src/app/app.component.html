@@ -5,10 +5,12 @@
 
     </app-post-form>
     <hr />
-    <app-post *ngFor="let p of posts" [post]="p">
-        <small *ngIf="p.text.length > 10; else short">Post ok</small>
-        <ng-template #short>
-            <small>post not ok</small>
-        </ng-template>
-    </app-post>
+    <div #info>
+        <app-post *ngFor="let p of posts" [post]="p">
+            <small *ngIf="p.text.length > 10; else short">Post ok</small>
+            <ng-template #short>
+                <small>post not ok</small>
+            </ng-template>
+        </app-post>
+    </div>
 </div>
