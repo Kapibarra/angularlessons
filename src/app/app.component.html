@@ -1,10 +1,17 @@
 <div class="container">
-    <h1>Angular Directives</h1>
+  <h1>Angular Pipes</h1>
 
+  <p>
+    {{ e | number:'1.1-5' }}
+  </p>
 
-    <p appStyle="green" fontWeight="bold" [dStyles]="{border:'1px solid blue', borderRadius: '20px'}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
-    <div class="wrap" *ngIf="isVisible">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum, quia officia ducimus sit quidem maiores odio iste sapiente in.</p>
-    </div>
-    <button class="btn" (click)="isVisible = !isVisible">Toggle div</button>
+  <p>
+    {{ e | number:'3.1-2' }}
+  </p>
+
+  <p>
+    {{ e | number:'1.0-0' }}
+  </p>
 </div>
+
+
