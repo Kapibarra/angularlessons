@@ -3,4 +3,8 @@
 
 
     <p appStyle="green" fontWeight="bold" [dStyles]="{border:'1px solid blue', borderRadius: '20px'}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, laborum!</p>
+    <div class="wrap" *ngIf="isVisible">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum, quia officia ducimus sit quidem maiores odio iste sapiente in.</p>
+    </div>
+    <button class="btn" (click)="isVisible = !isVisible">Toggle div</button>
 </div>
