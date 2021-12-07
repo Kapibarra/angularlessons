@@ -34,4 +34,8 @@ posts:Post[] = [
   {title:'Bread', text: 'Best bread in the world!!!!'},
   {title:'JS', text: 'Best JS ANGULAR in the world!!!!'}
 ]
+
+addPost() {
+  this.posts.unshift({title:'ang12', text: 'learnming'})
+}
 }
