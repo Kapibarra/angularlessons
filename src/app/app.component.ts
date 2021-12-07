@@ -1,5 +1,10 @@
 import {Component} from '@angular/core'
 
+export interface Post {
+  title: string,
+  text:string,
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,4 +26,12 @@ obj = {
     }
   }
 }
+
+search = ''
+searchField = 'title'
+posts:Post[] = [
+  {title:'Beer',text: 'Best beer in the world'},
+  {title:'Bread', text: 'Best bread in the world!!!!'},
+  {title:'JS', text: 'Best JS ANGULAR in the world!!!!'}
+]
 }
