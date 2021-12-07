@@ -1,4 +1,5 @@
 import {Component} from '@angular/core'
+import { Observable } from 'rxjs'
 
 export interface Post {
   title: string,
@@ -34,8 +35,20 @@ posts:Post[] = [
   {title:'Bread', text: 'Best bread in the world!!!!'},
   {title:'JS', text: 'Best JS ANGULAR in the world!!!!'}
 ]
-
 addPost() {
   this.posts.unshift({title:'ang12', text: 'learnming'})
 }
+
+promise:Promise<string> = new Promise<string>((resolve) => {
+  setTimeout(() => {
+    resolve('Promise resolved')
+  }, 4000);
+})
+
+myDate: Observable<Date> = new Observable(obs => {
+  setInterval(() => {
+obs.next(new Date)
+  }, 1000)
+})
+
 }

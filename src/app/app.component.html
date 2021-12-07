@@ -11,7 +11,8 @@
     <p>{{ 10 | mult }}</p>
     <p>{{ 10 | mult:13 }}</p>
     <p> {{ 'hello world ' | exMarks | titlecase }}</p> -->
-    <button class="btn" (click)="searchField = 'title'">Title</button>
+
+    <!-- <button class="btn" (click)="searchField = 'title'">Title</button>
     <button class="btn" (click)="searchField = 'text'">Text</button>
     <hr>
     <button class="btn" (click)="addPost()">Add post</button>
@@ -19,5 +20,8 @@
     <div class="card" *ngFor="let post of posts | filter:search:searchField">
         <h2>{{post.title}}</h2>
         <p>{{post.text}}</p>
-    </div>
+    </div> -->
+
+    <p>Wait for it... {{ promise | async }}</p>
+    <p> Date: {{ myDate | async | date:'HH:mm:ss yyyy' }}</p>
 </div>
