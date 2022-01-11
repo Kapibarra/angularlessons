@@ -14,7 +14,12 @@ ngOnInit() {
   this.form = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl(null, [Validators.minLength(6), Validators.required]),
+    adress: new FormGroup({
+      country: new FormControl('ru'),
+      city: new FormControl('', Validators.required)
+    })
   })
+  
 }
 submit() {
   console.log('Foprm sub', this.form);
