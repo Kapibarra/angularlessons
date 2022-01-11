@@ -25,7 +25,19 @@ submit() {
   console.log('Foprm sub', this.form);
   const formData = {...this.form.value}
   console.log('form data', formData);
-  
+}
+setCapital() {
+  const cityMap = {
+    ru: 'Moscow',
+    ua: 'Kiev',
+    by: 'Minsk'
+  }
+  const cityKey = this.form.get('adress').get('country').value
+  const city = cityMap[cityKey]
+
+  this.form.patchValue({
+    adress: {city}
+  })
 }
 }
 
