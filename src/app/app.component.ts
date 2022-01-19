@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
     if (!this.todoTitle.trim()) {
       return
     }
-
     this.todosService.addTodo({
       title: this.todoTitle,
       completed: false
@@ -50,6 +49,12 @@ export class AppComponent implements OnInit {
       .subscribe(() => {
         this.todos = this.todos.filter(t => t.id !== id)
       })
+  }
+  completeTodo(id: number) {
+this.todosService.completeTodo(id).subscribe((todo) => {
+this.todos.find( t => t.id === todo.id).completed = true
+
+})
   }
 }
 
