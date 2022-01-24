@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AboutExtraComponent } from "./about-extra/about-extra.component";
@@ -14,7 +15,7 @@ import { PostsComponent } from "./posts/posts.component";
 const routes: Routes = [
     {path:'', component: HomeComponent},
     {path:'about', component: AboutComponent, children: [{path: 'extra', component:AboutExtraComponent}]},
-    {path:'posts', component: PostsComponent},
+    {path:'posts', component: PostsComponent, canActivate: [AuthGuard]},
     {path:'posts/:id', component: PostComponent},
     {path:'error', component: ErrorPageComponent},
     // last route
