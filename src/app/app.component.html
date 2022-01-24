@@ -6,7 +6,7 @@
     <hr />
     <button (click)="visible=!visible">Visible</button>
     <hr />
-    <div class="box" [@box]="boxState" *ngIf="visible">
+    <div class="box" [@box]="boxState" *ngIf="visible" (@box.start)="animationStarted($event) (@box.done)=" animationDone($event) ">
         <h4>{{boxState | uppercase}}</h4>
     </div>
 </div>
