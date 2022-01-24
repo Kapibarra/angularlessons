@@ -1,5 +1,6 @@
 import {
   animate,
+  group,
   state,
   style,
   transition,
@@ -44,15 +45,22 @@ import { Component } from "@angular/core";
         animate(500),
       ]),
       // void => *
-      transition(":enter", [
-        style({ opacity: 0 }),
-        animate('900ms ease-out')]),
-        // "* => void"
-      transition(':leave', [
-          style({ opacity: 1 }),
-          animate('900ms ease-out')]),  
+      transition(":enter", [style({ opacity: 0 }), animate("900ms ease-out")]),
+      // "* => void"
+      transition(":leave", [
+        style({ opacity: 1 }),
+        group([
+          animate(
+            "900ms ease-out",
+            style({ opacity: 0, transform: "scale(1.2)"})
+          ),
+          animate(
+            100,
+            style({ color: "#000", fontWeight: "bold" })
+          ),
+        ]),
+      ]),
     ]),
-
   ],
 })
 export class AppComponent {
